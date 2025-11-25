@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórum da Inclusão</title>
+    <!-- Favicon e fontes -->
+    <link rel="icon" type="image/png" href="../assets/logo_forumdainclusao-Imagem.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../paginas/style-forumdainclusao.css">
+
+    <style>
+
+  /* ===================== Loading (CORRIGIDO) ===================== */
+  /* Esta regra agora ignora o #preloader E a div #scripts-executaveis, */
+  /* permitindo que o JS de remoção seja executado. */
+  html.loading body > *:not(#preloader):not(#scripts-executaveis) {
+    display: none !important;
+  }
+  #preloader {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  .neon-loader-ring {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid #0ff;
+    animation: neon-spin 1s linear infinite;
+  }
+  .neon-loader-ring::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid #0ff;
+    filter: blur(5px);
+    opacity: 0.7;
+    animation: neon-glow 1.5s ease-in-out infinite;
+  }
+  @keyframes neon-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  @keyframes neon-glow {
+    0%, 100% {
+      filter: blur(5px);
+      opacity: 0.7;
+    }
+    50% {
+      filter: blur(10px);
+      opacity: 1;
+    }
+  }
+  /* ===================== Loading ===================== */
+
+  /* Adicionada a media query para o botão de menu, para corrigir o problema original */
+  @media (max-width: 768px) {
+    .abrir-menu {
+      opacity: 1; /* Mostra o botão */
+      visibility: visible; /* Torna o botão visível */
+    }
+    
+    /* Remove a classe .mostrar-mobile se ela for usada em algum CSS externo */
+    .abrir-menu.mostrar-mobile {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+  }
+
+</style>
+
+</head>
+<body>
+
+    <!-- ===================== Preloader ===================== -->
+<div id="preloader" class="neon-loader fullscreen-loader">
+  <div class="neon-loader-ring"></div>
+</div>
+<!-- ===================== Fim do Preloader ===================== --> 
+
+<!-- ===================== IMAGEM FIXA DO FORUM COM LINK PARA CONTATO ===================== --> 
+  <a href="../paginas/contato.html" id="imagem-logo-link" aria-label="Ir para a página de contato do Fórum">
+    <img loading="lazy" src="../assets/logo_forumdainclusao-Transparente-parcial.png" alt="." class="imagem-fixa carregamento-postergado">
+  </a>
+<!-- ============== FIM DA IMAGEM FIXA DO Forum COM LINK PARA CONTATO ===================== -->
+
+<!-- ===================== LOGO DO FORUM (HEADER) ===================== -->
+<header>
+
+    <button class="abrir-menu" aria-label="Abrir menu" aria-controls="menu-lateral" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="logo">
+        <a href="../paginas/index-forumdainclusao.html" id="logo-link" aria-label="Ir para a página inicial do Fórum da Inclusão">
+            <img id="imagem-logo" loading="lazy" class="carregamento-postergado" src="../assets/logo_forumdainclusao.jpg" alt="Logotipo do Fórum da Inclusão">
+            <p id="forum-inclusao1">Fórum da Inclusão</p>
+        </a>
+    </div>
+
+    <nav aria-label="Menu de navegação principal">
+        <ul>
+            <li><a href="../paginas/index-forumdainclusao.html">Início</a></li>
+            <li><a href="../paginas/sobre-forumdainclusao.html">Sobre o Fórum</a></li>
+            <li><a href="../paginas/politicas-forumdainclusao.html">políticas</a></li>
+            <li><a href="../paginas/materiais-forumdainclusao.html">Materiais</a></li>
+            <li><a href="../paginas/contato-forumdainclusao.html">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- ============== FIM DO MENU DE NAVEGAÇÃO PRINCIPAL (HEADER) ===================== -->
+
+
+<!-- Início do conteúdo principal -->
+<main>
+  <!-- ===================== MENU LATERAL (MOBILE) E OVERLAY ===================== -->
+    <section>
+
+        <div class="menu-lateral" role="navigation" aria-label="Menu lateral de navegação">
+
+          <ul class="menu-lateral-list">
+
+            <li>
+              <a href="../paginas/index-forumdainclusao.html">
+                <i class="fa fa-home"></i> Início
+              </a>
+            </li>
+
+            <li>
+              <a href="../paginas/sobre-forumdainclusao.html">
+                <i class="fa fa-cat"></i> Sobre o Fórum
+              </a>
+            </li>
+
+            <li>
+              <a href="../paginas/politicas-forumdainclusao.html">
+                <i class="fa fa-image"></i> Políticas
+              </a>
+            </li>
+
+            <li>
+              <a href="../paginas/materiais-forumdainclusao.html">
+                <i class="fa fa-calendar-alt"></i> Materiais
+              </a>
+            </li>
+
+            <li>
+              <a href="../paginas/contato-forumdainclusao.html">
+                <i class="fa fa-envelope"></i> Contato
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="overlay-menu"></div>
+
+    </section>
+  <!-- ============== FIM DO MENU LATERAL (MOBILE) E OVERLAY ===================== -->
+
+
+    <!-- ===================== SEÇÃO PRINCIPAL DE DESTAQUE (HERO) ===================== -->
+
+   <section class="hero-sobre" aria-labelledby="heading-historia">
+       <div class="historia-container">
+           <div class="historia-image-wrapper">
+           
+               <a href="../assets/imagem-sobre.png" id="imagem-sobre" aria-label="imagem sobre o forum"></a>
+   
+           </div>
+   
+           <div class="historia-content">
+               <h2 id="heading-historia">Nossa História, Nossa Causa.</h2>
+               <p>
+                   Fundado em 2007, o Fórum da Inclusão nasceu da necessidade de criação de um espaço seguro e acolhedor, que promova voz, promova tradução e o acesso à informação de qualidade.
+               </p>
+               <p>
+                   Somos movidos pela crença de que a inclusão é um direito. Arregace as mangas e lute por um futuro mais justo e acessível para todos.
+               </p>
+   
+               <div class="historia-buttons">
+                   <a href="#valores" class="btn glare primary-btn">Nossos Valores</a>
+                   <a href="#equipe" class="btn glare secondary-btn">Equipe e Parceiros</a>
+               </div>
+           </div>
+       </div>
+  </section>
+
+
+
+
+
+
+
+  <section class="o-que-fazemos" aria-labelledby="heading-acoes">
+      <div class="container-acoes">
+          <h2 id="heading-acoes">O Que Fazemos</h2>
+          <p class="introducao">
+              Nossas ações são guiadas pela paixão por um mundo mais inclusivo. Através de diversas iniciativas, buscamos transformar realidades e construir pontes para um futuro onde todos tenham seu lugar.
+          </p>
+          <div class="cards-acoes">
+              <div class="card-acao">
+                  <i class="fa-solid fa-comments"></i>
+                  <h3>Conexão & Diálogo</h3>
+                  <p>Promovemos encontros, rodas de conversa e eventos que reúnem pessoas com e sem deficiência, especialistas e a comunidade para construir soluções.</p>
+                  <a href="#" class="btn-acao glare primary-btn">Saiba Mais</a>
+              </div>
+              <div class="card-acao">
+                  <i class="fa-solid fa-user-gear"></i>
+                  <h3>Capacitação & Oportunidade</h3>
+                  <p>Oferecemos workshops, cursos e mentorias para desenvolver habilidades e criar um ambiente de trabalho mais acessível e diverso.</p>
+                  <a href="#" class="btn-acao glare primary-btn">Saiba Mais</a>
+              </div>
+              <div class="card-acao">
+                  <i class="fa-solid fa-landmark"></i>
+                  <h3>Incidência Política & Advocacy</h3>
+                  <p>Atuamos junto a órgãos públicos e empresas para influenciar políticas e práticas que garantam os direitos e promovam a inclusão.</p>
+                  <a href="#" class="btn-acao glare primary-btn">Saiba Mais</a>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ===================== SEÇÃO DE CHAMADA FINAL PARA AÇÃO (CTA) ===================== -->
+  <section class="cta-final" role="region" aria-labelledby="titulo-cta-final">
+
+    <h2 id="titulo-cta-final">Junte-se à nossa causa!</h2>
+
+    <p>Conecte-se com a nossa comunidade e ajude a construir um futuro mais inclusivo.</p><br>
+
+    <div class="cta-buttons">
+
+      <a href="https://wa.me/551158319549"
+      class="btn whatsapp-btn glare"
+      role="button"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Enviar mensagem no WhatsApp para o Fórum da Inclusão">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i> Chamar no WhatsApp
+      </a>
+
+    </div>
+
+  </section>
+  <!-- ============== FIM DA SEÇÃO DE CHAMADA FINAL PARA AÇÃO (CTA) ===================== -->
+</main>
+  
+
+<!-- ===================== RODAPÉ DO SITE / FOOTER ===================== -->
+<footer role="contentinfo" aria-labelledby="titulo-footer">
+
+  <div class="footer-content">
+
+    <div class="footer-info">
+
+      <h3 id="titulo-footer">CONTATO</h3>
+
+      <p>
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+        <a href="https://www.google.com/maps/place/R.+Lu%C3%ADs+Baldinato,+9+-+Jardim+Angela,+S%C3%A3o+Paulo+-+SP,+04935-100,+Brasil/@-23.683627,-46.768312,18z/data=!4m6!3m5!1s0x94ce52476b614e95:0xdd6a8d514707fe09!8m2!3d-23.6835409!4d-46.768431!16s%2Fg%2F11f4qjrjxt?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDkyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Ver localização do Espaço Frajolinha no Google Maps">
+            Rua Luis Baldinato, Nº 9
+            Jardim Sônia Regina, São Paulo / SP – CEP 04935-120 Brasil
+
+        </a>
+      </p>
+
+      <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+5511959928916" class="phone-link"
+        aria-label="Ligar para o Espaço Frajolinha no número (11) 95992-8916">
+        (11) 5831-9549</a></p>
+
+    </div>
+
+    <div class="social-media">
+
+        <h3>SIGA-NOS</h3>
+        
+        <a href="https://www.instagram.com/paroquiasantosmartires/" class="siga-nos-icon" target="_blank" rel="noopener noreferrer" aria-label="Acessar Instagram do Espaço Frajolinha">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    <p>© 2025 Fórum da Inclusão - Todos os direitos reservados</p>
+  </div>
+
+</footer>
+<!-- ============== FIM DO RODAPÉ DO SITE / FOOTER ===================== -->
+
+
+
+<!-- ===================== BOTÃO "VOLTAR AO TOPO" COM SVG ===================== -->
+<button
+id="btn-topo"
+title="Voltar ao topo"
+aria-label="Voltar ao topo"
+type="button"
+aria-describedby="descricao-voltar-topo">
+
+ <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000">
+ <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>arrow-up-circle</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-362.000000, -1089.000000)" fill="#000000"> <path d="M384.535,1105.54 C384.145,1105.93 383.512,1105.93 383.121,1105.54 L379,1101.41 L379,1112 C379,1112.55 378.553,1113 378,1113 C377.447,1113 377,1112.55 377,1112 L377,1101.41 L372.879,1105.54 C372.488,1105.93 371.854,1105.93 371.465,1105.54 C371.074,1105.14 371.074,1104.51 371.465,1104.12 L377.121,1098.46 C377.361,1098.22 377.689,1098.15 378,1098.21 C378.311,1098.15 378.639,1098.22 378.879,1098.46 L384.535,1104.12 C384.926,1104.51 384.926,1105.14 384.535,1105.54 L384.535,1105.54 Z M378,1089 C369.163,1089 362,1096.16 362,1105 C362,1113.84 369.163,1121 378,1121 C386.837,1121 394,1113.84 394,1105 C394,1096.16 386.837,1089 378,1089 L378,1089 Z" id="arrow-up-circle" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+
+<span id="descricao-voltar-topo" class="sr-only">Clique para voltar ao topo da página</span>
+</button>
+<div id="scripts-executaveis">
+
+  
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+  // ===================== BOTÃO "VOLTAR AO TOPO" =====================
+  const botao = document.getElementById("btn-topo");
+
+  function verificarScroll() {
+   if (!botao) return;
+   if (window.scrollY > 300) {
+    botao.classList.add("mostrar");
+   } else {
+    botao.classList.remove("mostrar");
+   }
+  }
+
+  if (botao) {
+   botao.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+   });
+  }
+
+  window.addEventListener("scroll", verificarScroll);
+  // ===================== FIM BOTÃO "VOLTAR AO TOPO" =====================
+
+
+   // ===================== ALINHAMENTO SOCIAL =====================
+   function alinharSigaNosComGato() {
+    // Note: 'botao' aqui é #btn-topo. Mantenha 'ajustarBotaoTopo' se ela for definida em outro lugar.
+    const sigaNos = document.querySelector(".social-media");
+    if (!botao || !sigaNos) return;
+
+    const distanciaDireita = window.innerWidth - botao.getBoundingClientRect().right;
+    sigaNos.style.marginRight = `${distanciaDireita + 10}px`;
+   }
+
+   // Note: 'ajustarBotaoTopo' não está definida neste código, mas vamos assumir que está em outro script ou é um erro de digitação
+   // Se ela não estiver definida, remova a chamada abaixo para evitar erros no console.
+   function ajustarBotaoTopo() { 
+    if (botao) verificarScroll();
+   }
+
+   window.addEventListener("resize", alinharSigaNosComGato);
+   window.addEventListener("load", () => {
+    ajustarBotaoTopo();
+    alinharSigaNosComGato();
+   });
+   // ===================== FIM ALINHAMENTO SOCIAL =====================
+
+
+   // ===================== ATIVA LINK DE MENU =====================
+   document.querySelectorAll("nav ul li a, .menu-lateral ul li a").forEach(link => {
+    const linkHref = new URL(link.href, window.location.origin).pathname;
+    const atualHref = window.location.pathname;
+
+    const normalize = path => decodeURIComponent(path).replace(/\/$/, "");
+
+    if (normalize(atualHref) === normalize(linkHref)) {
+      link.classList.add("ativo");
+      link.setAttribute("aria-current", "page");
+     }
+    });
+    // ===================== FIM ATIVA LINK DE MENU ===================== 
+    // ===================== MENU LATERAL =====================
+    const abrirMenuBtn = document.querySelector(".abrir-menu"); // botão hambúrguer
+    const fecharMenuBtn = document.querySelector(".fechar-menu");
+    const menuLateral = document.querySelector(".menu-lateral");
+    const overlayMenu = document.querySelector(".overlay-menu");
+    const logoAnimado = document.querySelector(".logo-menu-img"); 
+    function abrirMenu() {
+     if (!menuLateral) return;
+     menuLateral.classList.add("aberto");
+     overlayMenu.style.display = "block";
+     abrirMenuBtn?.setAttribute("aria-expanded", "true");
+     abrirMenuBtn?.classList.add("ativo");
+     abrirMenuBtn.classList.add("aberto"); 
+     // Reinicia animação do logo
+     if (logoAnimado) {
+      logoAnimado.classList.remove("logo-menu-img");
+      void logoAnimado.offsetWidth;
+      logoAnimado.classList.add("logo-menu-img");
+     }
+    } 
+    function fecharMenu() {
+     if (!menuLateral) return;
+     menuLateral.classList.remove("aberto");
+     overlayMenu.style.display = "none";
+     abrirMenuBtn?.setAttribute("aria-expanded", "false");
+     abrirMenuBtn?.classList.remove("ativo");
+     abrirMenuBtn.classList.remove("aberto");
+    } 
+    abrirMenuBtn?.addEventListener("click", e => {
+     if (window.innerWidth <= 768) {
+      e.preventDefault();
+      menuLateral.classList.contains("aberto") ? fecharMenu() : abrirMenu();
+     }
+    }); 
+    fecharMenuBtn?.addEventListener("click", fecharMenu);
+    overlayMenu?.addEventListener("click", fecharMenu);
+    // ===================== FIM MENU LATERAL ===================== 
+    // ===================== PRELOADER =====================
+    const start = Date.now(); 
+    document.querySelectorAll("img.carregamento-postergado").forEach(img => {
+     img.dataset.src = img.src;
+     img.removeAttribute("src");
+    }); 
+    window.addEventListener("load", () => {
+     const elapsed = Date.now() - start;
+     const wait = Math.max(100 - elapsed, 0); 
+     document.querySelectorAll("img.carregamento-postergado").forEach(img => {
+      if (!img.src && img.dataset.src) img.src = img.dataset.src;
+     }); 
+     setTimeout(() => {
+      document.documentElement.classList.remove("loading"); 
+      const preloader = document.getElementById("preloader");
+      if (preloader) {
+       preloader.style.opacity = "0";
+       preloader.style.pointerEvents = "none";
+       setTimeout(() => {
+        preloader.remove();
+        ajustarBotaoTopo();
+        alinharSigaNosComGato();
+       }, 600);
+      }
+     }, wait);
+    });
+    // ===================== FIM PRELOADER ===================== 
+    // ===================== PARALLAX =====================
+    const cards = document.querySelectorAll(".parallax-card");
+    const maxRotation = 12; 
+    cards.forEach(card => {
+     const content = card.querySelector(".parallax-card-content");
+     if (!content) return; 
+     card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2; 
+      const rotateX = -(y - centerY) / centerY * maxRotation;
+      const rotateY = (x - centerX) / centerX * maxRotation; 
+      content.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+     }); 
+     card.addEventListener("mouseleave", () => {
+      content.style.transform = "rotateX(0deg) rotateY(0deg)";
+     });
+    });
+    // ===================== FIM PARALLAX =====================
+
+    // ===================== SLIDER =====================
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+     function showSlides() { 
+     slides.forEach(slide => slide.classList.remove("active"));
+     slideIndex = (slideIndex + 1) % slides.length;
+     slides[slideIndex].classList.add("active");
+    }
+
+    if (slides.length > 0) {
+     slides[0].classList.add("active");
+     setInterval(showSlides, 5000);
+    }
+    // ===================== FIM SLIDER =====================
+
+
+  // ===================== CORREÇÃO DA LÓGICA DE SCROLL (REMOVIDO O CONTROLE DO MENU) =====================
+  // A lógica do menu foi movida para o CSS (media query)
+  const botao1 = document.getElementById("btn-topo"); 
+
+  // Removemos a declaração de botaoAbrirMenu e a lógica de classes relacionadas.
+
+  // Re-define a função verificarScroll (agora só para o botão "Voltar ao Topo")
+  function verificarScroll() {
+    if (window.scrollY > 300) {
+    // APENAS mostra o de voltar ao topo
+    botao1.classList.add("mostrar");
+  } else {
+   // APENAS esconde o de voltar ao topo
+    botao1.classList.remove("mostrar");
+   }
+  }
+
+  window.addEventListener("scroll", verificarScroll);
+  // ===================== FIM CORREÇÃO DA LÓGICA DE SCROLL =====================
+
+  });
+  </script>
+<!-- ===================== FIM DOS SCRIPTS PERSONALIZADOS ===================== -->
+    
+</body>
+</html>
