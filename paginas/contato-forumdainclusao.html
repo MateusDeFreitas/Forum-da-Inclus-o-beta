@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="../paginas/style-forumdainclusao.css">
-
 </head>
 <body>
 
@@ -32,7 +31,7 @@
 
         <div class="logo">
             <a href="../paginas/index-forumdainclusao.html" id="logo-link" aria-label="Ir para a página inicial do Fórum da Inclusão">
-                <img id="imagem-logo" loading="lazy" class="carregamento-postergado" src="../assets/logo_forumdainclusao.jpg" alt="Logotipo do Fórum da Inclusão">
+                <img id="imagem-logo" loading="lazy" class="carregamento-postergado" src="../assets/logo_forumdainclusao-Imagem.png" alt="Logotipo do Fórum da Inclusão">
                 <p id="forum-inclusao1">Fórum da Inclusão</p>
             </a>
         </div>
@@ -44,20 +43,20 @@
                 <li><a href="../paginas/contato-forumdainclusao.html" class="ativo" aria-current="page">Contato</a></li>
             </ul>
         </nav>
-    </header>
-
-    <main>
+        <!-- ===================== MENU LATERAL (MOBILE) E OVERLAY ===================== -->
         <section>
             <div class="menu-lateral" role="navigation" aria-label="Menu lateral de navegação">
-                <ul class="menu-lateral-list">
-                    <li><a href="../paginas/index-forumdainclusao.html"><i class="fa fa-home"></i> Início</a></li>
-                    <li><a href="../paginas/sobre-forumdainclusao.html"><i class="fa fa-cat"></i> Sobre o Fórum</a></li>
-                    <li><a href="../paginas/contato-forumdainclusao.html" class="ativo" aria-current="page"><i class="fa fa-envelope"></i> Contato</a></li>
-                </ul>
+            <ul class="menu-lateral-list">
+                <li><a href="../paginas/index-forumdainclusao.html"><i class="fa fa-home"></i> Início</a></li>
+                <li><a href="../paginas/sobre-forumdainclusao.html"><i class="fa fa-cat"></i> Sobre o Fórum</a></li>
+                <li><a href="../paginas/contato-forumdainclusao.html"><i class="fa fa-envelope"></i> Contato</a></li>
+            </ul>
             </div>
             <div class="overlay-menu"></div>
         </section>
-
+        <!-- ============== FIM DO MENU LATERAL (MOBILE) E OVERLAY ===================== -->
+    </header>
+    <main>
         <section class="secao-contato" aria-labelledby="titulo-contato">
             
             <div class="info-contato">
@@ -155,9 +154,192 @@
 
     <div id="scripts-executaveis">
         <script>
-            // TODO: Inserir aqui todos os scripts de preloader, menu lateral, voltar ao topo, etc.
-            // Ex: document.addEventListener("DOMContentLoaded", () => { ... });
-        </script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+  // ===================== BOTÃO "VOLTAR AO TOPO" =====================
+  const botao = document.getElementById("btn-topo");
+
+  function verificarScroll() {
+   if (!botao) return;
+   if (window.scrollY > 300) {
+    botao.classList.add("mostrar");
+   } else {
+    botao.classList.remove("mostrar");
+   }
+  }
+
+  if (botao) {
+   botao.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+   });
+  }
+
+  window.addEventListener("scroll", verificarScroll);
+  // ===================== FIM BOTÃO "VOLTAR AO TOPO" =====================
+
+
+   // ===================== ALINHAMENTO SOCIAL =====================
+   function alinharSigaNosComGato() {
+    // Note: 'botao' aqui é #btn-topo. Mantenha 'ajustarBotaoTopo' se ela for definida em outro lugar.
+    const sigaNos = document.querySelector(".social-media");
+    if (!botao || !sigaNos) return;
+
+    const distanciaDireita = window.innerWidth - botao.getBoundingClientRect().right;
+    sigaNos.style.marginRight = `${distanciaDireita + 10}px`;
+   }
+
+   // Note: 'ajustarBotaoTopo' não está definida neste código, mas vamos assumir que está em outro script ou é um erro de digitação
+   // Se ela não estiver definida, remova a chamada abaixo para evitar erros no console.
+   function ajustarBotaoTopo() { 
+    if (botao) verificarScroll();
+   }
+
+   window.addEventListener("resize", alinharSigaNosComGato);
+   window.addEventListener("load", () => {
+    ajustarBotaoTopo();
+    alinharSigaNosComGato();
+   });
+   // ===================== FIM ALINHAMENTO SOCIAL =====================
+
+
+   // ===================== ATIVA LINK DE MENU =====================
+   document.querySelectorAll("nav ul li a, .menu-lateral ul li a").forEach(link => {
+    const linkHref = new URL(link.href, window.location.origin).pathname;
+    const atualHref = window.location.pathname;
+
+    const normalize = path => decodeURIComponent(path).replace(/\/$/, "");
+
+    if (normalize(atualHref) === normalize(linkHref)) {
+      link.classList.add("ativo");
+      link.setAttribute("aria-current", "page");
+     }
+    });
+    // ===================== FIM ATIVA LINK DE MENU ===================== 
+    // ===================== MENU LATERAL =====================
+    const abrirMenuBtn = document.querySelector(".abrir-menu"); // botão hambúrguer
+    const fecharMenuBtn = document.querySelector(".fechar-menu");
+    const menuLateral = document.querySelector(".menu-lateral");
+    const overlayMenu = document.querySelector(".overlay-menu");
+    const logoAnimado = document.querySelector(".logo-menu-img"); 
+    function abrirMenu() {
+     if (!menuLateral) return;
+     menuLateral.classList.add("aberto");
+     overlayMenu.style.display = "block";
+     abrirMenuBtn?.setAttribute("aria-expanded", "true");
+     abrirMenuBtn?.classList.add("ativo");
+     abrirMenuBtn.classList.add("aberto"); 
+     // Reinicia animação do logo
+     if (logoAnimado) {
+      logoAnimado.classList.remove("logo-menu-img");
+      void logoAnimado.offsetWidth;
+      logoAnimado.classList.add("logo-menu-img");
+     }
+    } 
+    function fecharMenu() {
+     if (!menuLateral) return;
+     menuLateral.classList.remove("aberto");
+     overlayMenu.style.display = "none";
+     abrirMenuBtn?.setAttribute("aria-expanded", "false");
+     abrirMenuBtn?.classList.remove("ativo");
+     abrirMenuBtn.classList.remove("aberto");
+    } 
+    abrirMenuBtn?.addEventListener("click", e => {
+     if (window.innerWidth <= 768) {
+      e.preventDefault();
+      menuLateral.classList.contains("aberto") ? fecharMenu() : abrirMenu();
+     }
+    }); 
+    fecharMenuBtn?.addEventListener("click", fecharMenu);
+    overlayMenu?.addEventListener("click", fecharMenu);
+    // ===================== FIM MENU LATERAL ===================== 
+    // ===================== PRELOADER =====================
+    const start = Date.now(); 
+    document.querySelectorAll("img.carregamento-postergado").forEach(img => {
+     img.dataset.src = img.src;
+     img.removeAttribute("src");
+    }); 
+    window.addEventListener("load", () => {
+     const elapsed = Date.now() - start;
+     const wait = Math.max(100 - elapsed, 0); 
+     document.querySelectorAll("img.carregamento-postergado").forEach(img => {
+      if (!img.src && img.dataset.src) img.src = img.dataset.src;
+     }); 
+     setTimeout(() => {
+      document.documentElement.classList.remove("loading"); 
+      const preloader = document.getElementById("preloader");
+      if (preloader) {
+       preloader.style.opacity = "0";
+       preloader.style.pointerEvents = "none";
+       setTimeout(() => {
+        preloader.remove();
+        ajustarBotaoTopo();
+        alinharSigaNosComGato();
+       }, 600);
+      }
+     }, wait);
+    });
+    // ===================== FIM PRELOADER ===================== 
+    // ===================== PARALLAX =====================
+    const cards = document.querySelectorAll(".parallax-card");
+    const maxRotation = 12; 
+    cards.forEach(card => {
+     const content = card.querySelector(".parallax-card-content");
+     if (!content) return; 
+     card.addEventListener("mousemove", e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2; 
+      const rotateX = -(y - centerY) / centerY * maxRotation;
+      const rotateY = (x - centerX) / centerX * maxRotation; 
+      content.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+     }); 
+     card.addEventListener("mouseleave", () => {
+      content.style.transform = "rotateX(0deg) rotateY(0deg)";
+     });
+    });
+    // ===================== FIM PARALLAX =====================
+
+    // ===================== SLIDER =====================
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+     function showSlides() { 
+     slides.forEach(slide => slide.classList.remove("active"));
+     slideIndex = (slideIndex + 1) % slides.length;
+     slides[slideIndex].classList.add("active");
+    }
+
+    if (slides.length > 0) {
+     slides[0].classList.add("active");
+     setInterval(showSlides, 5000);
+    }
+    // ===================== FIM SLIDER =====================
+
+
+  // ===================== CORREÇÃO DA LÓGICA DE SCROLL (REMOVIDO O CONTROLE DO MENU) =====================
+  // A lógica do menu foi movida para o CSS (media query)
+  const botao1 = document.getElementById("btn-topo"); 
+
+  // Removemos a declaração de botaoAbrirMenu e a lógica de classes relacionadas.
+
+  // Re-define a função verificarScroll (agora só para o botão "Voltar ao Topo")
+  function verificarScroll() {
+    if (window.scrollY > 300) {
+    // APENAS mostra o de voltar ao topo
+    botao1.classList.add("mostrar");
+  } else {
+   // APENAS esconde o de voltar ao topo
+    botao1.classList.remove("mostrar");
+   }
+  }
+
+  window.addEventListener("scroll", verificarScroll);
+  // ===================== FIM CORREÇÃO DA LÓGICA DE SCROLL =====================
+
+  });
+  </script>
+<!-- ===================== FIM DOS SCRIPTS PERSONALIZADOS ===================== -->
     </div>
 
 </body>
