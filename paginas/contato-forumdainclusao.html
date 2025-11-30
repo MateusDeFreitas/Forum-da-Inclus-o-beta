@@ -108,6 +108,8 @@
                 <h3>Envie sua Mensagem</h3>
                 <form action="https://formsubmit.co/mateus.santosf05@gmail.com" method="POST">
                     
+                    <input type="hidden" name="descricao" value="Esta mensagem foi enviada através do site oficial do Fórum da Inclusão. Aqui estão os dados informados pelo usuário.">
+
                     <div class="form-group">
                         <label for="nome">Nome Completo:</label>
                         <input type="text" id="nome" name="nome" required placeholder="Seu nome">
@@ -133,6 +135,12 @@
                         <label for="mensagem">Mensagem:</label>
                         <textarea id="mensagem" name="mensagem" required placeholder="Digite sua mensagem aqui..."></textarea>
                     </div>
+
+                    <input type="hidden" name="_subject" value="Nova mensagem!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="box">
+                    <input type="hidden" name="_next" value="https://rad-cendol-1c8adf.netlify.app/paginas/thankyou">
+                    <input type="text" name="_honey" style="display:none" value="teste">
 
                     <button type="submit" class="btn-enviar">Enviar Mensagem</button>
                 </form>
