@@ -14,28 +14,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", verificarScroll);
 
-  // MENU LATERAL
+  // ===================== MENU LATERAL =====================
   const abrirMenuBtn = document.querySelector(".abrir-menu");
+  const fecharMenuBtn = document.querySelector(".fechar-menu");
   const menuLateral = document.querySelector(".menu-lateral");
   const overlayMenu = document.querySelector(".overlay-menu");
+  const logoAnimado = document.querySelector(".logo-menu-img");
 
   function abrirMenu() {
     menuLateral.classList.add("aberto");
     overlayMenu.style.display = "block";
-    abrirMenuBtn.setAttribute("aria-expanded", "true");
+    abrirMenuBtn?.setAttribute("aria-expanded", "true");
+    abrirMenuBtn?.classList.add("ativo", "aberto");
+
+    if (logoAnimado) {
+      logoAnimado.classList.remove("logo-menu-img");
+      void logoAnimado.offsetWidth;
+      logoAnimado.classList.add("logo-menu-img");
+    }
   }
 
   function fecharMenu() {
     menuLateral.classList.remove("aberto");
     overlayMenu.style.display = "none";
-    abrirMenuBtn.setAttribute("aria-expanded", "false");
+    abrirMenuBtn?.setAttribute("aria-expanded", "false");
+    abrirMenuBtn?.classList.remove("ativo", "aberto");
   }
 
-  abrirMenuBtn?.addEventListener("click", () => {
-    if (menuLateral.classList.contains("aberto")) fecharMenu();
-    else abrirMenu();
+  abrirMenuBtn?.addEventListener("click", e => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault();
+      menuLateral.classList.contains("aberto") ? fecharMenu() : abrirMenu();
+    }
   });
 
+  fecharMenuBtn?.addEventListener("click", fecharMenu);
   overlayMenu?.addEventListener("click", fecharMenu);
 
   // SLIDER
