@@ -12,7 +12,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <link rel="stylesheet" href="../paginas/style-forumdainclusao.css">
+    <link rel="stylesheet" href="../css/style-forumdainclusao.css">
 </head>
 
 <body>
@@ -193,43 +193,9 @@
     </button>
 
     <div id="scripts-executaveis">
-        <script>
-            // TODO: Inserir aqui todos os scripts de preloader, menu lateral, voltar ao topo, etc.
-            // Para esta página, você também vai precisar de um script para o filtro!
-            document.addEventListener("DOMContentLoaded", () => {
-                const tipoMaterialSelect = document.getElementById('tipo-material');
-                const topicoMaterialSelect = document.getElementById('topico-material');
-                const materialCards = document.querySelectorAll('.material-card');
-
-                function aplicarFiltros() {
-                    const tipoSelecionado = tipoMaterialSelect.value;
-                    const topicoSelecionado = topicoMaterialSelect.value;
-
-                    materialCards.forEach(card => {
-                        const tipoCard = card.dataset.tipo;
-                        const topicoCard = card.dataset.topico;
-
-                        const tipoCorresponde = (tipoSelecionado === 'todos' || tipoSelecionado === tipoCard);
-                        const topicoCorresponde = (topicoSelecionado === 'todos' || topicoSelecionado === topicoCard);
-
-                        if (tipoCorresponde && topicoCorresponde) {
-                            card.style.display = 'flex'; // Mostra o card
-                        } else {
-                            card.style.display = 'none'; // Esconde o card
-                        }
-                    });
-                }
-
-                // Adiciona listeners para os selects
-                tipoMaterialSelect.addEventListener('change', aplicarFiltros);
-                topicoMaterialSelect.addEventListener('change', aplicarFiltros);
-
-                // Aplica os filtros na carga inicial (para garantir que "Todos" esteja ativo)
-                aplicarFiltros();
-
-                // ... (aqui iriam os outros scripts como menu lateral, preloader, etc.) ...
-            });
-        </script>
+        <!-- Scripts comuns (preloader, menu, etc.) devem ser adicionados aqui -->
+        <!-- Script específico para a página de materiais -->
+        <script src="../javascript/materiais.js"></script>
     </div>
 
 </body>

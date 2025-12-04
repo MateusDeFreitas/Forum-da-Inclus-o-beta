@@ -11,8 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="../paginas/style-forumdainclusao.css">
+
+    <!-- CSS separado -->
+    <link rel="stylesheet" href="../css/style-forumdainclusao.css">
 </head>
 <body>
 
@@ -43,91 +44,85 @@
                 <li><a href="../paginas/contato-forumdainclusao.html" class="ativo" aria-current="page">Contato</a></li>
             </ul>
         </nav>
-        <!-- ===================== MENU LATERAL (MOBILE) E OVERLAY ===================== -->
+
         <section>
             <div class="menu-lateral" role="navigation" aria-label="Menu lateral de navegação">
-            <ul class="menu-lateral-list">
-                <li><a href="../paginas/index-forumdainclusao.html"><i class="fa fa-home"></i> Início</a></li>
-                <li><a href="../paginas/sobre-forumdainclusao.html"><i class="fa-solid fa-users"></i> Sobre o Fórum</a></li>
-                <li><a href="../paginas/contato-forumdainclusao.html"><i class="fa fa-envelope"></i> Contato</a></li>
-            </ul>
+                <ul class="menu-lateral-list">
+                    <li><a href="../paginas/index-forumdainclusao.html"><i class="fa fa-home"></i> Início</a></li>
+                    <li><a href="../paginas/sobre-forumdainclusao.html"><i class="fa fa-cat"></i> Sobre o Fórum</a></li>
+                    <li><a href="../paginas/contato-forumdainclusao.html"><i class="fa fa-envelope"></i> Contato</a></li>
+                </ul>
             </div>
             <div class="overlay-menu"></div>
         </section>
-        <!-- ============== FIM DO MENU LATERAL (MOBILE) E OVERLAY ===================== -->
     </header>
+
     <main>
         <section class="secao-contato" aria-labelledby="titulo-contato">
-            
             <div class="info-contato">
                 <div>
                     <h2 id="titulo-contato">Fale Conosco</h2>
                     <p>Estamos prontos para ouvir suas dúvidas, sugestões ou propostas de parceria. Escolha a melhor forma de contato:</p>
-                    
-                    <hr style="border: 0; border-top: 1px solid #DDD; margin: 20px 0;">
+
+                    <hr>
 
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <p>
-                            <a href="https://www.google.com/maps/place/Par%C3%B3quia+Maria+M%C3%A3e+da+Igreja/@-23.6733294,-46.7777116,14z/data=!4m10!1m2!2m1!1sComunidade+S%C3%A3o+Sebasti%C3%A3o,+R.+Jo%C3%A3o+Alves+de+Torres,+9+-+Jardim+das+flores.!3m6!1s0x94ce51d779ee3df5:0x2d1479aa54b115ca!8m2!3d-23.6733294!4d-46.7396028!15sCkxDb211bmlkYWRlIFPDo28gU2ViYXN0acOjbywgUi4gSm_Do28gQWx2ZXMgZGUgVG9ycmVzLCA5IC0gSmFyZGltIGRhcyBmbG9yZXMuWkgiRmNvbXVuaWRhZGUgc8OjbyBzZWJhc3Rpw6NvIHIgam_Do28gYWx2ZXMgZGUgdG9ycmVzIDkgamFyZGltIGRhcyBmbG9yZXOSAQ9jYXRob2xpY19jaHVyY2iaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTlNjbk5ZVUdGUkVBReABAPoBBAhgED4!16s%2Fg%2F11glx523ft?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-                                Comunidade São Sebastião, R. João Alves de Torres, 9 - Jardim das flores. CEP: 04904-120
+                            <a href="https://www.google.com/maps/place/R.+Lu%C3%ADs+Baldinato,+9" target="_blank">
+                                Rua Luis Baldinato, Nº 9, Jardim Sônia Regina, São Paulo / SP – CEP 04935-120 Brasil
                             </a>
                         </p>
                     </div>
 
                     <div class="info-item">
                         <i class="fas fa-phone" aria-hidden="true"></i>
-                        <p>
-                            <a href="tel:+551158319549" aria-label="Ligar para o Fórum da Inclusão">
-                                (11) 5831-9549
-                            </a>
-                        </p>
+                        <p><a href="tel:+551158319549">(11) 5831-9549</a></p>
                     </div>
-                    
+
                     <div class="info-item">
-                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        <p>
-                            <a href="https://wa.me/551158319549" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensagem no WhatsApp">
-                                (11) 5831-9549 (WhatsApp)
-                            </a>
-                        </p>
+                        <i class="fab fa-whatsapp"></i>
+                        <p><a href="https://wa.me/551158319549" target="_blank">(11) 5831-9549 (WhatsApp)</a></p>
                     </div>
                 </div>
 
-                <iframe 
-                    class="mapa-contato"
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29232.587997158786!2d-46.7777116!3d-23.6733294!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce51d779ee3df5%3A0x2d1479aa54b115ca!2sPar%C3%B3quia%20Maria%20M%C3%A3e%20da%20Igreja!5e0!3m2!1spt-BR!2sbr!4v1764646472177!5m2!1spt-BR!2sbr" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Localização do Fórum da Inclusão no Google Maps">
+                <iframe class="mapa-contato"
+                    src="https://maps.google.com/maps?q=Rua+Luis+Baldinato,+9+São+Paulo&output=embed"
+                    allowfullscreen loading="lazy">
                 </iframe>
             </div>
 
             <div class="form-contato">
                 <h3>Envie sua Mensagem</h3>
+
                 <form action="https://formsubmit.co/mateus.santosf05@gmail.com" method="POST">
-                    
-                    <input type="hidden" name="descricao" value="Esta mensagem foi enviada através do site oficial do Fórum da Inclusão. Aqui estão os dados informados pelo usuário.">
+
+                    <input type="hidden" name="descricao" value="Mensagem enviada pelo site.">
 
                     <div class="form-group">
                         <label for="nome">Nome Completo:</label>
-                        <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+                        <input type="text" id="nome" name="nome" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required placeholder="seu.email@exemplo.com">
+                        <input type="email" id="email" name="email" required>
                     </div>
 
                     <div class="form-group">
                         <label for="assunto">Assunto:</label>
-                        <input type="text" id="assunto" name="assunto" required placeholder="Qual é o assunto?">
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione...</option>
+                            <option value="duvida">Dúvida Geral</option>
+                            <option value="parceria">Proposta de Parceria</option>
+                            <option value="material">Sugestão de Material</option>
+                            <option value="outro">Outros</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label for="mensagem">Mensagem:</label>
-                        <textarea id="mensagem" name="mensagem" required placeholder="Digite sua mensagem aqui..."></textarea>
+                        <textarea id="mensagem" name="mensagem" required></textarea>
                     </div>
 
                     <input type="hidden" name="_subject" value="Nova mensagem!">
@@ -140,209 +135,20 @@
                 </form>
             </div>
         </section>
-
     </main>
-    
-    <footer role="contentinfo" aria-labelledby="titulo-footer">
+
+    <footer aria-labelledby="titulo-footer">
       <img src="../assets/logo_forumdainclusao-Transparente-parcial.png" alt="">
       <div class="copyright">
         <p>© 2025 Fórum da Inclusão - Todos os direitos reservados</p>
       </div>
     </footer>
     
-    <button id="btn-topo" title="Voltar ao topo" aria-label="Voltar ao topo" type="button" aria-describedby="descricao-voltar-topo">
-        <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">...</svg>
+    <button id="btn-topo" aria-label="Voltar ao topo">
+        <svg viewBox="0 0 32 32">...</svg>
     </button>
 
-    <div id="scripts-executaveis">
-        <script>
-  document.addEventListener("DOMContentLoaded", () => {
-
-  // ===================== BOTÃO "VOLTAR AO TOPO" =====================
-  const botao = document.getElementById("btn-topo");
-
-  function verificarScroll() {
-   if (!botao) return;
-   if (window.scrollY > 300) {
-    botao.classList.add("mostrar");
-   } else {
-    botao.classList.remove("mostrar");
-   }
-  }
-
-  if (botao) {
-   botao.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-   });
-  }
-
-  window.addEventListener("scroll", verificarScroll);
-  // ===================== FIM BOTÃO "VOLTAR AO TOPO" =====================
-
-
-   // ===================== ALINHAMENTO SOCIAL =====================
-   function alinharSigaNosComGato() {
-    // Note: 'botao' aqui é #btn-topo. Mantenha 'ajustarBotaoTopo' se ela for definida em outro lugar.
-    const sigaNos = document.querySelector(".social-media");
-    if (!botao || !sigaNos) return;
-
-    const distanciaDireita = window.innerWidth - botao.getBoundingClientRect().right;
-    sigaNos.style.marginRight = `${distanciaDireita + 10}px`;
-   }
-
-   // Note: 'ajustarBotaoTopo' não está definida neste código, mas vamos assumir que está em outro script ou é um erro de digitação
-   // Se ela não estiver definida, remova a chamada abaixo para evitar erros no console.
-   function ajustarBotaoTopo() { 
-    if (botao) verificarScroll();
-   }
-
-   window.addEventListener("resize", alinharSigaNosComGato);
-   window.addEventListener("load", () => {
-    ajustarBotaoTopo();
-    alinharSigaNosComGato();
-   });
-   // ===================== FIM ALINHAMENTO SOCIAL =====================
-
-
-   // ===================== ATIVA LINK DE MENU =====================
-   document.querySelectorAll("nav ul li a, .menu-lateral ul li a").forEach(link => {
-    const linkHref = new URL(link.href, window.location.origin).pathname;
-    const atualHref = window.location.pathname;
-
-    const normalize = path => decodeURIComponent(path).replace(/\/$/, "");
-
-    if (normalize(atualHref) === normalize(linkHref)) {
-      link.classList.add("ativo");
-      link.setAttribute("aria-current", "page");
-     }
-    });
-    // ===================== FIM ATIVA LINK DE MENU ===================== 
-    // ===================== MENU LATERAL =====================
-    const abrirMenuBtn = document.querySelector(".abrir-menu"); // botão hambúrguer
-    const fecharMenuBtn = document.querySelector(".fechar-menu");
-    const menuLateral = document.querySelector(".menu-lateral");
-    const overlayMenu = document.querySelector(".overlay-menu");
-    const logoAnimado = document.querySelector(".logo-menu-img"); 
-    function abrirMenu() {
-     if (!menuLateral) return;
-     menuLateral.classList.add("aberto");
-     overlayMenu.style.display = "block";
-     abrirMenuBtn?.setAttribute("aria-expanded", "true");
-     abrirMenuBtn?.classList.add("ativo");
-     abrirMenuBtn.classList.add("aberto"); 
-     // Reinicia animação do logo
-     if (logoAnimado) {
-      logoAnimado.classList.remove("logo-menu-img");
-      void logoAnimado.offsetWidth;
-      logoAnimado.classList.add("logo-menu-img");
-     }
-    } 
-    function fecharMenu() {
-     if (!menuLateral) return;
-     menuLateral.classList.remove("aberto");
-     overlayMenu.style.display = "none";
-     abrirMenuBtn?.setAttribute("aria-expanded", "false");
-     abrirMenuBtn?.classList.remove("ativo");
-     abrirMenuBtn.classList.remove("aberto");
-    } 
-    abrirMenuBtn?.addEventListener("click", e => {
-     if (window.innerWidth <= 768) {
-      e.preventDefault();
-      menuLateral.classList.contains("aberto") ? fecharMenu() : abrirMenu();
-     }
-    }); 
-    fecharMenuBtn?.addEventListener("click", fecharMenu);
-    overlayMenu?.addEventListener("click", fecharMenu);
-    // ===================== FIM MENU LATERAL ===================== 
-    // ===================== PRELOADER =====================
-    const start = Date.now(); 
-    document.querySelectorAll("img.carregamento-postergado").forEach(img => {
-     img.dataset.src = img.src;
-     img.removeAttribute("src");
-    }); 
-    window.addEventListener("load", () => {
-     const elapsed = Date.now() - start;
-     const wait = Math.max(100 - elapsed, 0); 
-     document.querySelectorAll("img.carregamento-postergado").forEach(img => {
-      if (!img.src && img.dataset.src) img.src = img.dataset.src;
-     }); 
-     setTimeout(() => {
-      document.documentElement.classList.remove("loading"); 
-      const preloader = document.getElementById("preloader");
-      if (preloader) {
-       preloader.style.opacity = "0";
-       preloader.style.pointerEvents = "none";
-       setTimeout(() => {
-        preloader.remove();
-        ajustarBotaoTopo();
-        alinharSigaNosComGato();
-       }, 600);
-      }
-     }, wait);
-    });
-    // ===================== FIM PRELOADER ===================== 
-    // ===================== PARALLAX =====================
-    const cards = document.querySelectorAll(".parallax-card");
-    const maxRotation = 12; 
-    cards.forEach(card => {
-     const content = card.querySelector(".parallax-card-content");
-     if (!content) return; 
-     card.addEventListener("mousemove", e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2; 
-      const rotateX = -(y - centerY) / centerY * maxRotation;
-      const rotateY = (x - centerX) / centerX * maxRotation; 
-      content.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-     }); 
-     card.addEventListener("mouseleave", () => {
-      content.style.transform = "rotateX(0deg) rotateY(0deg)";
-     });
-    });
-    // ===================== FIM PARALLAX =====================
-
-    // ===================== SLIDER =====================
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
-     function showSlides() { 
-     slides.forEach(slide => slide.classList.remove("active"));
-     slideIndex = (slideIndex + 1) % slides.length;
-     slides[slideIndex].classList.add("active");
-    }
-
-    if (slides.length > 0) {
-     slides[0].classList.add("active");
-     setInterval(showSlides, 5000);
-    }
-    // ===================== FIM SLIDER =====================
-
-
-  // ===================== CORREÇÃO DA LÓGICA DE SCROLL (REMOVIDO O CONTROLE DO MENU) =====================
-  // A lógica do menu foi movida para o CSS (media query)
-  const botao1 = document.getElementById("btn-topo"); 
-
-  // Removemos a declaração de botaoAbrirMenu e a lógica de classes relacionadas.
-
-  // Re-define a função verificarScroll (agora só para o botão "Voltar ao Topo")
-  function verificarScroll() {
-    if (window.scrollY > 300) {
-    // APENAS mostra o de voltar ao topo
-    botao1.classList.add("mostrar");
-  } else {
-   // APENAS esconde o de voltar ao topo
-    botao1.classList.remove("mostrar");
-   }
-  }
-
-  window.addEventListener("scroll", verificarScroll);
-  // ===================== FIM CORREÇÃO DA LÓGICA DE SCROLL =====================
-
-  });
-  </script>
-<!-- ===================== FIM DOS SCRIPTS PERSONALIZADOS ===================== -->
-    </div>
-
+    <!-- JS separado -->
+    <script src="../javascript/contato.js"></script>
 </body>
 </html>
