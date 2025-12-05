@@ -1,0 +1,6 @@
+# .uolhost.yml para leitura da build e deploy no UOL Host
+version: 1
+deploy:
+  type: static
+  input: /
+  output: /
