@@ -1,6 +1,6 @@
 # .uolhost.yml para leitura da build e deploy no UOL Host
-version: 1
-deploy:
-  type: static
-  input: /
-  output: /
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/forumdeibfd60c57/public_html/
+    - /bin/cp -R assets $DEPLOYPATH
